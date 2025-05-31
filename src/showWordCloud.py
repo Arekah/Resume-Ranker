@@ -4,7 +4,7 @@ nltk.download('punkt')
 from nltk.corpus import stopwords
 import string
 from wordcloud import WordCloud
-from cleanCSV import cleanData
+from src.cleanCSV import cleanData
 import matplotlib.pyplot as plt;
 
 def wordCloudLogic(resumeInCSV):
@@ -31,6 +31,7 @@ def showCommonWords(totalWords):
 
 def getTotalWords(Sentences , oneSetOfStopWords):
     totalWords =[]
+    cleanedSentences = ""
     for i in range(0,160):
         cleanedText = cleanData(Sentences[i])
         cleanedSentences += cleanedText
